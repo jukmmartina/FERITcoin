@@ -5,6 +5,9 @@
 
 #include <validation.h>
 
+#include <boost/bind/bind.hpp>
+using namespace boost::placeholders;
+
 #include <arith_uint256.h>
 #include <chain.h>
 #include <chainparams.h>

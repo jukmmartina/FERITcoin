@@ -5,6 +5,9 @@
 
 #include <validationinterface.h>
 
+#include <boost/bind/bind.hpp>
+using namespace boost::placeholders;
+
 #include <init.h>
 #include <primitives/block.h>
 #include <scheduler.h>
