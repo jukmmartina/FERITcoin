@@ -1,126 +1,126 @@
-# Copyright (c) 2013-2016 The Bitcoin Core developers
+# Copyright (c) 2013-2016 The Feritcoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-bin_PROGRAMS += qt/bitcoin-qt
-EXTRA_LIBRARIES += qt/libbitcoinqt.a
+bin_PROGRAMS += qt/feritcoin-qt
+EXTRA_LIBRARIES += qt/libferitcoinqt.a
 
-# bitcoin qt core #
+# feritcoin qt core #
 QT_TS = \
-  qt/locale/bitcoin_af.ts \
-  qt/locale/bitcoin_af_ZA.ts \
-  qt/locale/bitcoin_am.ts \
-  qt/locale/bitcoin_ar.ts \
-  qt/locale/bitcoin_be_BY.ts \
-  qt/locale/bitcoin_bg_BG.ts \
-  qt/locale/bitcoin_bg.ts \
-  qt/locale/bitcoin_bn.ts \
-  qt/locale/bitcoin_bs.ts \
-  qt/locale/bitcoin_ca_ES.ts \
-  qt/locale/bitcoin_ca.ts \
-  qt/locale/bitcoin_ca@valencia.ts \
-  qt/locale/bitcoin_cs_CZ.ts \
-  qt/locale/bitcoin_cs.ts \
-  qt/locale/bitcoin_cy.ts \
-  qt/locale/bitcoin_da.ts \
-  qt/locale/bitcoin_de_DE.ts \
-  qt/locale/bitcoin_de.ts \
-  qt/locale/bitcoin_el_GR.ts \
-  qt/locale/bitcoin_el.ts \
-  qt/locale/bitcoin_en_AU.ts \
-  qt/locale/bitcoin_en_GB.ts \
-  qt/locale/bitcoin_en.ts \
-  qt/locale/bitcoin_eo.ts \
-  qt/locale/bitcoin_es_419.ts \
-  qt/locale/bitcoin_es_AR.ts \
-  qt/locale/bitcoin_es_CL.ts \
-  qt/locale/bitcoin_es_CO.ts \
-  qt/locale/bitcoin_es_DO.ts \
-  qt/locale/bitcoin_es_ES.ts \
-  qt/locale/bitcoin_es_MX.ts \
-  qt/locale/bitcoin_es.ts \
-  qt/locale/bitcoin_es_UY.ts \
-  qt/locale/bitcoin_es_VE.ts \
-  qt/locale/bitcoin_et_EE.ts \
-  qt/locale/bitcoin_et.ts \
-  qt/locale/bitcoin_eu_ES.ts \
-  qt/locale/bitcoin_fa_IR.ts \
-  qt/locale/bitcoin_fa.ts \
-  qt/locale/bitcoin_fi.ts \
-  qt/locale/bitcoin_fr_CA.ts \
-  qt/locale/bitcoin_fr_FR.ts \
-  qt/locale/bitcoin_fr.ts \
-  qt/locale/bitcoin_gl.ts \
-  qt/locale/bitcoin_he_IL.ts \
-  qt/locale/bitcoin_he.ts \
-  qt/locale/bitcoin_hi_IN.ts \
-  qt/locale/bitcoin_hr.ts \
-  qt/locale/bitcoin_hu_HU.ts \
-  qt/locale/bitcoin_hu.ts \
-  qt/locale/bitcoin_id_ID.ts \
-  qt/locale/bitcoin_id.ts \
-  qt/locale/bitcoin_is.ts \
-  qt/locale/bitcoin_it_IT.ts \
-  qt/locale/bitcoin_it.ts \
-  qt/locale/bitcoin_ja_JP.ts \
-  qt/locale/bitcoin_ja.ts \
-  qt/locale/bitcoin_ka.ts \
-  qt/locale/bitcoin_kk_KZ.ts \
-  qt/locale/bitcoin_km_KH.ts \
-  qt/locale/bitcoin_ko_KR.ts \
-  qt/locale/bitcoin_ko.ts \
-  qt/locale/bitcoin_ku_IQ.ts \
-  qt/locale/bitcoin_ky.ts \
-  qt/locale/bitcoin_la.ts \
-  qt/locale/bitcoin_lt.ts \
-  qt/locale/bitcoin_lv_LV.ts \
-  qt/locale/bitcoin_mk_MK.ts \
-  qt/locale/bitcoin_ml.ts \
-  qt/locale/bitcoin_mn.ts \
-  qt/locale/bitcoin_mr_IN.ts \
-  qt/locale/bitcoin_ms_MY.ts \
-  qt/locale/bitcoin_ms.ts \
-  qt/locale/bitcoin_my.ts \
-  qt/locale/bitcoin_nb_NO.ts \
-  qt/locale/bitcoin_nb.ts \
-  qt/locale/bitcoin_ne.ts \
-  qt/locale/bitcoin_nl_NL.ts \
-  qt/locale/bitcoin_nl.ts \
-  qt/locale/bitcoin_pam.ts \
-  qt/locale/bitcoin_pl_PL.ts \
-  qt/locale/bitcoin_pl.ts \
-  qt/locale/bitcoin_pt_BR.ts \
-  qt/locale/bitcoin_pt_PT.ts \
-  qt/locale/bitcoin_pt.ts \
-  qt/locale/bitcoin_ro_RO.ts \
-  qt/locale/bitcoin_ro.ts \
-  qt/locale/bitcoin_ru_RU.ts \
-  qt/locale/bitcoin_ru.ts \
-  qt/locale/bitcoin_si.ts \
-  qt/locale/bitcoin_sk.ts \
-  qt/locale/bitcoin_sl_SI.ts \
-  qt/locale/bitcoin_sn.ts \
-  qt/locale/bitcoin_sq.ts \
-  qt/locale/bitcoin_sr@latin.ts \
-  qt/locale/bitcoin_sr.ts \
-  qt/locale/bitcoin_sv.ts \
-  qt/locale/bitcoin_ta_IN.ts \
-  qt/locale/bitcoin_ta.ts \
-  qt/locale/bitcoin_te.ts \
-  qt/locale/bitcoin_th_TH.ts \
-  qt/locale/bitcoin_th.ts \
-  qt/locale/bitcoin_tr_TR.ts \
-  qt/locale/bitcoin_tr.ts \
-  qt/locale/bitcoin_uk.ts \
-  qt/locale/bitcoin_ur_PK.ts \
-  qt/locale/bitcoin_uz@Cyrl.ts \
-  qt/locale/bitcoin_vi.ts \
-  qt/locale/bitcoin_vi_VN.ts \
-  qt/locale/bitcoin_zh_CN.ts \
-  qt/locale/bitcoin_zh-Hans.ts \
-  qt/locale/bitcoin_zh_HK.ts \
-  qt/locale/bitcoin_zh.ts \
-  qt/locale/bitcoin_zh_TW.ts
+  qt/locale/feritcoin_af.ts \
+  qt/locale/feritcoin_af_ZA.ts \
+  qt/locale/feritcoin_am.ts \
+  qt/locale/feritcoin_ar.ts \
+  qt/locale/feritcoin_be_BY.ts \
+  qt/locale/feritcoin_bg_BG.ts \
+  qt/locale/feritcoin_bg.ts \
+  qt/locale/feritcoin_bn.ts \
+  qt/locale/feritcoin_bs.ts \
+  qt/locale/feritcoin_ca_ES.ts \
+  qt/locale/feritcoin_ca.ts \
+  qt/locale/feritcoin_ca@valencia.ts \
+  qt/locale/feritcoin_cs_CZ.ts \
+  qt/locale/feritcoin_cs.ts \
+  qt/locale/feritcoin_cy.ts \
+  qt/locale/feritcoin_da.ts \
+  qt/locale/feritcoin_de_DE.ts \
+  qt/locale/feritcoin_de.ts \
+  qt/locale/feritcoin_el_GR.ts \
+  qt/locale/feritcoin_el.ts \
+  qt/locale/feritcoin_en_AU.ts \
+  qt/locale/feritcoin_en_GB.ts \
+  qt/locale/feritcoin_en.ts \
+  qt/locale/feritcoin_eo.ts \
+  qt/locale/feritcoin_es_419.ts \
+  qt/locale/feritcoin_es_AR.ts \
+  qt/locale/feritcoin_es_CL.ts \
+  qt/locale/feritcoin_es_CO.ts \
+  qt/locale/feritcoin_es_DO.ts \
+  qt/locale/feritcoin_es_ES.ts \
+  qt/locale/feritcoin_es_MX.ts \
+  qt/locale/feritcoin_es.ts \
+  qt/locale/feritcoin_es_UY.ts \
+  qt/locale/feritcoin_es_VE.ts \
+  qt/locale/feritcoin_et_EE.ts \
+  qt/locale/feritcoin_et.ts \
+  qt/locale/feritcoin_eu_ES.ts \
+  qt/locale/feritcoin_fa_IR.ts \
+  qt/locale/feritcoin_fa.ts \
+  qt/locale/feritcoin_fi.ts \
+  qt/locale/feritcoin_fr_CA.ts \
+  qt/locale/feritcoin_fr_FR.ts \
+  qt/locale/feritcoin_fr.ts \
+  qt/locale/feritcoin_gl.ts \
+  qt/locale/feritcoin_he_IL.ts \
+  qt/locale/feritcoin_he.ts \
+  qt/locale/feritcoin_hi_IN.ts \
+  qt/locale/feritcoin_hr.ts \
+  qt/locale/feritcoin_hu_HU.ts \
+  qt/locale/feritcoin_hu.ts \
+  qt/locale/feritcoin_id_ID.ts \
+  qt/locale/feritcoin_id.ts \
+  qt/locale/feritcoin_is.ts \
+  qt/locale/feritcoin_it_IT.ts \
+  qt/locale/feritcoin_it.ts \
+  qt/locale/feritcoin_ja_JP.ts \
+  qt/locale/feritcoin_ja.ts \
+  qt/locale/feritcoin_ka.ts \
+  qt/locale/feritcoin_kk_KZ.ts \
+  qt/locale/feritcoin_km_KH.ts \
+  qt/locale/feritcoin_ko_KR.ts \
+  qt/locale/feritcoin_ko.ts \
+  qt/locale/feritcoin_ku_IQ.ts \
+  qt/locale/feritcoin_ky.ts \
+  qt/locale/feritcoin_la.ts \
+  qt/locale/feritcoin_lt.ts \
+  qt/locale/feritcoin_lv_LV.ts \
+  qt/locale/feritcoin_mk_MK.ts \
+  qt/locale/feritcoin_ml.ts \
+  qt/locale/feritcoin_mn.ts \
+  qt/locale/feritcoin_mr_IN.ts \
+  qt/locale/feritcoin_ms_MY.ts \
+  qt/locale/feritcoin_ms.ts \
+  qt/locale/feritcoin_my.ts \
+  qt/locale/feritcoin_nb_NO.ts \
+  qt/locale/feritcoin_nb.ts \
+  qt/locale/feritcoin_ne.ts \
+  qt/locale/feritcoin_nl_NL.ts \
+  qt/locale/feritcoin_nl.ts \
+  qt/locale/feritcoin_pam.ts \
+  qt/locale/feritcoin_pl_PL.ts \
+  qt/locale/feritcoin_pl.ts \
+  qt/locale/feritcoin_pt_BR.ts \
+  qt/locale/feritcoin_pt_PT.ts \
+  qt/locale/feritcoin_pt.ts \
+  qt/locale/feritcoin_ro_RO.ts \
+  qt/locale/feritcoin_ro.ts \
+  qt/locale/feritcoin_ru_RU.ts \
+  qt/locale/feritcoin_ru.ts \
+  qt/locale/feritcoin_si.ts \
+  qt/locale/feritcoin_sk.ts \
+  qt/locale/feritcoin_sl_SI.ts \
+  qt/locale/feritcoin_sn.ts \
+  qt/locale/feritcoin_sq.ts \
+  qt/locale/feritcoin_sr@latin.ts \
+  qt/locale/feritcoin_sr.ts \
+  qt/locale/feritcoin_sv.ts \
+  qt/locale/feritcoin_ta_IN.ts \
+  qt/locale/feritcoin_ta.ts \
+  qt/locale/feritcoin_te.ts \
+  qt/locale/feritcoin_th_TH.ts \
+  qt/locale/feritcoin_th.ts \
+  qt/locale/feritcoin_tr_TR.ts \
+  qt/locale/feritcoin_tr.ts \
+  qt/locale/feritcoin_uk.ts \
+  qt/locale/feritcoin_ur_PK.ts \
+  qt/locale/feritcoin_uz@Cyrl.ts \
+  qt/locale/feritcoin_vi.ts \
+  qt/locale/feritcoin_vi_VN.ts \
+  qt/locale/feritcoin_zh_CN.ts \
+  qt/locale/feritcoin_zh-Hans.ts \
+  qt/locale/feritcoin_zh_HK.ts \
+  qt/locale/feritcoin_zh.ts \
+  qt/locale/feritcoin_zh_TW.ts
 
 QT_FORMS_UI = \
   qt/forms/addressbookpage.ui \
@@ -146,10 +146,10 @@ QT_MOC_CPP = \
   qt/moc_addresstablemodel.cpp \
   qt/moc_askpassphrasedialog.cpp \
   qt/moc_bantablemodel.cpp \
-  qt/moc_bitcoinaddressvalidator.cpp \
-  qt/moc_bitcoinamountfield.cpp \
-  qt/moc_bitcoingui.cpp \
-  qt/moc_bitcoinunits.cpp \
+  qt/moc_feritcoinaddressvalidator.cpp \
+  qt/moc_feritcoinamountfield.cpp \
+  qt/moc_feritcoingui.cpp \
+  qt/moc_feritcoinunits.cpp \
   qt/moc_callback.cpp \
   qt/moc_clientmodel.cpp \
   qt/moc_coincontroldialog.cpp \
@@ -189,36 +189,36 @@ QT_MOC_CPP = \
   qt/moc_walletmodel.cpp \
   qt/moc_walletview.cpp
 
-BITCOIN_MM = \
+FERITCOIN_MM = \
   qt/macdockiconhandler.mm \
   qt/macnotificationhandler.mm
 
 QT_MOC = \
-  qt/bitcoin.moc \
-  qt/bitcoinamountfield.moc \
+  qt/feritcoin.moc \
+  qt/feritcoinamountfield.moc \
   qt/callback.moc \
   qt/intro.moc \
   qt/overviewpage.moc \
   qt/rpcconsole.moc
 
-QT_QRC_CPP = qt/qrc_bitcoin.cpp
-QT_QRC = qt/bitcoin.qrc
-QT_QRC_LOCALE_CPP = qt/qrc_bitcoin_locale.cpp
-QT_QRC_LOCALE = qt/bitcoin_locale.qrc
+QT_QRC_CPP = qt/qrc_feritcoin.cpp
+QT_QRC = qt/feritcoin.qrc
+QT_QRC_LOCALE_CPP = qt/qrc_feritcoin_locale.cpp
+QT_QRC_LOCALE = qt/feritcoin_locale.qrc
 
 PROTOBUF_CC = qt/paymentrequest.pb.cc
 PROTOBUF_H = qt/paymentrequest.pb.h
 PROTOBUF_PROTO = qt/paymentrequest.proto
 
-BITCOIN_QT_H = \
+FERITCOIN_QT_H = \
   qt/addressbookpage.h \
   qt/addresstablemodel.h \
   qt/askpassphrasedialog.h \
   qt/bantablemodel.h \
-  qt/bitcoinaddressvalidator.h \
-  qt/bitcoinamountfield.h \
-  qt/bitcoingui.h \
-  qt/bitcoinunits.h \
+  qt/feritcoinaddressvalidator.h \
+  qt/feritcoinamountfield.h \
+  qt/feritcoingui.h \
+  qt/feritcoinunits.h \
   qt/callback.h \
   qt/clientmodel.h \
   qt/coincontroldialog.h \
@@ -270,9 +270,9 @@ RES_ICONS = \
   qt/res/icons/address-book.png \
   qt/res/icons/about.png \
   qt/res/icons/about_qt.png \
-  qt/res/icons/bitcoin.ico \
-  qt/res/icons/bitcoin_testnet.ico \
-  qt/res/icons/bitcoin.png \
+  qt/res/icons/feritcoin.ico \
+  qt/res/icons/feritcoin_testnet.ico \
+  qt/res/icons/feritcoin.png \
   qt/res/icons/chevron.png \
   qt/res/icons/clock1.png \
   qt/res/icons/clock2.png \
@@ -322,12 +322,12 @@ RES_ICONS = \
   qt/res/icons/warning.png \
   qt/res/icons/verify.png
 
-BITCOIN_QT_BASE_CPP = \
+FERITCOIN_QT_BASE_CPP = \
   qt/bantablemodel.cpp \
-  qt/bitcoinaddressvalidator.cpp \
-  qt/bitcoinamountfield.cpp \
-  qt/bitcoingui.cpp \
-  qt/bitcoinunits.cpp \
+  qt/feritcoinaddressvalidator.cpp \
+  qt/feritcoinamountfield.cpp \
+  qt/feritcoingui.cpp \
+  qt/feritcoinunits.cpp \
   qt/clientmodel.cpp \
   qt/csvmodelwriter.cpp \
   qt/guiutil.cpp \
@@ -346,9 +346,9 @@ BITCOIN_QT_BASE_CPP = \
   qt/trafficgraphwidget.cpp \
   qt/utilitydialog.cpp
 
-BITCOIN_QT_WINDOWS_CPP = qt/winshutdownmonitor.cpp
+FERITCOIN_QT_WINDOWS_CPP = qt/winshutdownmonitor.cpp
 
-BITCOIN_QT_WALLET_CPP = \
+FERITCOIN_QT_WALLET_CPP = \
   qt/addressbookpage.cpp \
   qt/addresstablemodel.cpp \
   qt/askpassphrasedialog.cpp \
@@ -376,31 +376,31 @@ BITCOIN_QT_WALLET_CPP = \
   qt/walletmodeltransaction.cpp \
   qt/walletview.cpp
 
-BITCOIN_QT_CPP = $(BITCOIN_QT_BASE_CPP)
+FERITCOIN_QT_CPP = $(FERITCOIN_QT_BASE_CPP)
 if TARGET_WINDOWS
-BITCOIN_QT_CPP += $(BITCOIN_QT_WINDOWS_CPP)
+FERITCOIN_QT_CPP += $(FERITCOIN_QT_WINDOWS_CPP)
 endif
 if ENABLE_WALLET
-BITCOIN_QT_CPP += $(BITCOIN_QT_WALLET_CPP)
+FERITCOIN_QT_CPP += $(FERITCOIN_QT_WALLET_CPP)
 endif
 
 RES_IMAGES = 
 
 RES_MOVIES = $(wildcard $(srcdir)/qt/res/movies/spinner-*.png)
 
-BITCOIN_RC = qt/res/bitcoin-qt-res.rc
+FERITCOIN_RC = qt/res/feritcoin-qt-res.rc
 
-BITCOIN_QT_INCLUDES = -DQT_NO_KEYWORDS
+FERITCOIN_QT_INCLUDES = -DQT_NO_KEYWORDS
 
-qt_libbitcoinqt_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
+qt_libferitcoinqt_a_CPPFLAGS = $(AM_CPPFLAGS) $(FERITCOIN_INCLUDES) $(FERITCOIN_QT_INCLUDES) \
   $(QT_INCLUDES) $(QT_DBUS_INCLUDES) $(PROTOBUF_CFLAGS) $(QR_CFLAGS)
-qt_libbitcoinqt_a_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
-qt_libbitcoinqt_a_OBJCXXFLAGS = $(AM_OBJCXXFLAGS) $(QT_PIE_FLAGS)
+qt_libferitcoinqt_a_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
+qt_libferitcoinqt_a_OBJCXXFLAGS = $(AM_OBJCXXFLAGS) $(QT_PIE_FLAGS)
 
-qt_libbitcoinqt_a_SOURCES = $(BITCOIN_QT_CPP) $(BITCOIN_QT_H) $(QT_FORMS_UI) \
+qt_libferitcoinqt_a_SOURCES = $(FERITCOIN_QT_CPP) $(FERITCOIN_QT_H) $(QT_FORMS_UI) \
   $(QT_QRC) $(QT_QRC_LOCALE) $(QT_TS) $(PROTOBUF_PROTO) $(RES_ICONS) $(RES_IMAGES) $(RES_MOVIES)
 
-nodist_qt_libbitcoinqt_a_SOURCES = $(QT_MOC_CPP) $(QT_MOC) $(PROTOBUF_CC) \
+nodist_qt_libferitcoinqt_a_SOURCES = $(QT_MOC_CPP) $(QT_MOC) $(PROTOBUF_CC) \
   $(PROTOBUF_H) $(QT_QRC_CPP) $(QT_QRC_LOCALE_CPP)
 
 # forms/foo.h -> forms/ui_foo.h
@@ -409,71 +409,71 @@ QT_FORMS_H=$(join $(dir $(QT_FORMS_UI)),$(addprefix ui_, $(notdir $(QT_FORMS_UI:
 # Most files will depend on the forms and moc files as includes. Generate them
 # before anything else.
 $(QT_MOC): $(QT_FORMS_H)
-$(qt_libbitcoinqt_a_OBJECTS) $(qt_bitcoin_qt_OBJECTS) : | $(QT_MOC)
+$(qt_libferitcoinqt_a_OBJECTS) $(qt_feritcoin_qt_OBJECTS) : | $(QT_MOC)
 
 #Generating these with a half-written protobuf header leads to wacky results.
 #This makes sure it's done.
 $(QT_MOC): $(PROTOBUF_H)
 $(QT_MOC_CPP): $(PROTOBUF_H)
 
-# bitcoin-qt binary #
-qt_bitcoin_qt_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
+# feritcoin-qt binary #
+qt_feritcoin_qt_CPPFLAGS = $(AM_CPPFLAGS) $(FERITCOIN_INCLUDES) $(FERITCOIN_QT_INCLUDES) \
   $(QT_INCLUDES) $(PROTOBUF_CFLAGS) $(QR_CFLAGS)
-qt_bitcoin_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
+qt_feritcoin_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
 
-qt_bitcoin_qt_SOURCES = qt/bitcoin.cpp
+qt_feritcoin_qt_SOURCES = qt/feritcoin.cpp
 if TARGET_DARWIN
-  qt_bitcoin_qt_SOURCES += $(BITCOIN_MM)
+  qt_feritcoin_qt_SOURCES += $(FERITCOIN_MM)
 endif
 if TARGET_WINDOWS
-  qt_bitcoin_qt_SOURCES += $(BITCOIN_RC)
+  qt_feritcoin_qt_SOURCES += $(FERITCOIN_RC)
 endif
-qt_bitcoin_qt_LDADD = qt/libbitcoinqt.a $(LIBBITCOIN_SERVER)
+qt_feritcoin_qt_LDADD = qt/libferitcoinqt.a $(LIBFERITCOIN_SERVER)
 if ENABLE_WALLET
-qt_bitcoin_qt_LDADD += $(LIBBITCOIN_WALLET)
+qt_feritcoin_qt_LDADD += $(LIBFERITCOIN_WALLET)
 endif
 if ENABLE_ZMQ
-qt_bitcoin_qt_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
+qt_feritcoin_qt_LDADD += $(LIBFERITCOIN_ZMQ) $(ZMQ_LIBS)
 endif
-qt_bitcoin_qt_LDADD += $(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) $(LIBBITCOIN_CONSENSUS) $(LIBBITCOIN_CRYPTO) $(LIBUNIVALUE) $(LIBLEVELDB) $(LIBLEVELDB_SSE42) $(LIBMEMENV) \
+qt_feritcoin_qt_LDADD += $(LIBFERITCOIN_CLI) $(LIBFERITCOIN_COMMON) $(LIBFERITCOIN_UTIL) $(LIBFERITCOIN_CONSENSUS) $(LIBFERITCOIN_CRYPTO) $(LIBUNIVALUE) $(LIBLEVELDB) $(LIBLEVELDB_SSE42) $(LIBMEMENV) \
   $(BOOST_LIBS) $(QT_LIBS) $(QT_DBUS_LIBS) $(QR_LIBS) $(PROTOBUF_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(LIBSECP256K1) \
   $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
-qt_bitcoin_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-qt_bitcoin_qt_LIBTOOLFLAGS = --tag CXX
+qt_feritcoin_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+qt_feritcoin_qt_LIBTOOLFLAGS = --tag CXX
 
 #locale/foo.ts -> locale/foo.qm
 QT_QM=$(QT_TS:.ts=.qm)
 
 SECONDARY: $(QT_QM)
 
-$(srcdir)/qt/bitcoinstrings.cpp: $(libbitcoin_server_a_SOURCES) $(libbitcoin_wallet_a_SOURCES) $(libbitcoin_common_a_SOURCES) $(libbitcoin_zmq_a_SOURCES) $(libbitcoin_consensus_a_SOURCES) $(libbitcoin_util_a_SOURCES)
+$(srcdir)/qt/feritcoinstrings.cpp: $(libferitcoin_server_a_SOURCES) $(libferitcoin_wallet_a_SOURCES) $(libferitcoin_common_a_SOURCES) $(libferitcoin_zmq_a_SOURCES) $(libferitcoin_consensus_a_SOURCES) $(libferitcoin_util_a_SOURCES)
 	@test -n $(XGETTEXT) || echo "xgettext is required for updating translations"
 	$(AM_V_GEN) cd $(srcdir); XGETTEXT=$(XGETTEXT) PACKAGE_NAME="$(PACKAGE_NAME)" COPYRIGHT_HOLDERS="$(COPYRIGHT_HOLDERS)" COPYRIGHT_HOLDERS_SUBSTITUTION="$(COPYRIGHT_HOLDERS_SUBSTITUTION)" $(PYTHON) ../share/qt/extract_strings_qt.py $^
 
-translate: $(srcdir)/qt/bitcoinstrings.cpp $(QT_FORMS_UI) $(QT_FORMS_UI) $(BITCOIN_QT_BASE_CPP) qt/bitcoin.cpp $(BITCOIN_QT_WINDOWS_CPP) $(BITCOIN_QT_WALLET_CPP) $(BITCOIN_QT_H) $(BITCOIN_MM)
+translate: $(srcdir)/qt/feritcoinstrings.cpp $(QT_FORMS_UI) $(QT_FORMS_UI) $(FERITCOIN_QT_BASE_CPP) qt/feritcoin.cpp $(FERITCOIN_QT_WINDOWS_CPP) $(FERITCOIN_QT_WALLET_CPP) $(FERITCOIN_QT_H) $(FERITCOIN_MM)
 	@test -n $(LUPDATE) || echo "lupdate is required for updating translations"
-	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LUPDATE) $^ -locations relative -no-obsolete -ts $(srcdir)/qt/locale/bitcoin_en.ts
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LUPDATE) $^ -locations relative -no-obsolete -ts $(srcdir)/qt/locale/feritcoin_en.ts
 
 $(QT_QRC_LOCALE_CPP): $(QT_QRC_LOCALE) $(QT_QM)
 	@test -f $(RCC)
 	@cp -f $< $(@D)/temp_$(<F)
-	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name bitcoin_locale $(@D)/temp_$(<F) | \
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name feritcoin_locale $(@D)/temp_$(<F) | \
 	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
 	@rm $(@D)/temp_$(<F)
 
 $(QT_QRC_CPP): $(QT_QRC) $(QT_FORMS_H) $(RES_ICONS) $(RES_IMAGES) $(RES_MOVIES) $(PROTOBUF_H)
 	@test -f $(RCC)
-	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name bitcoin $< | \
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name feritcoin $< | \
 	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
 
-CLEAN_QT = $(nodist_qt_libbitcoinqt_a_SOURCES) $(QT_QM) $(QT_FORMS_H) qt/*.gcda qt/*.gcno qt/temp_bitcoin_locale.qrc
+CLEAN_QT = $(nodist_qt_libferitcoinqt_a_SOURCES) $(QT_QM) $(QT_FORMS_H) qt/*.gcda qt/*.gcno qt/temp_feritcoin_locale.qrc
 
 CLEANFILES += $(CLEAN_QT)
 
-bitcoin_qt_clean: FORCE
-	rm -f $(CLEAN_QT) $(qt_libbitcoinqt_a_OBJECTS) $(qt_bitcoin_qt_OBJECTS) qt/bitcoin-qt$(EXEEXT) $(LIBBITCOINQT)
+feritcoin_qt_clean: FORCE
+	rm -f $(CLEAN_QT) $(qt_libferitcoinqt_a_OBJECTS) $(qt_feritcoin_qt_OBJECTS) qt/feritcoin-qt$(EXEEXT) $(LIBFERITCOINQT)
 
-bitcoin_qt : qt/bitcoin-qt$(EXEEXT)
+feritcoin_qt : qt/feritcoin-qt$(EXEEXT)
 
 ui_%.h: %.ui
 	@test -f $(UIC)

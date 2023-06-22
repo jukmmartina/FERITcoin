@@ -1,0 +1,6 @@
+usr/local/bin/feritcoin-qt usr/bin
+share/pixmaps/feritcoin32.xpm usr/share/pixmaps
+share/pixmaps/feritcoin16.xpm usr/share/pixmaps
+share/pixmaps/feritcoin128.png usr/share/pixmaps
+debian/feritcoin-qt.desktop usr/share/applications
+debian/feritcoin-qt.protocol usr/share/kde4/services/

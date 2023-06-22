@@ -1,0 +1,25 @@
+# It is not recommended to modify this file in-place, because it will
+# be overwritten during package upgrades. If you want to add further
+# options or overwrite existing ones then use
+# $ systemctl edit feritcoind.service
+# See "man systemd.service" for details.
+
+# Note that almost all daemon options could be specified in
+# /etc/feritcoin/feritcoin.conf
+
+[Unit]
+Description=Feritcoin daemon
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/feritcoind -daemon -conf=/etc/feritcoin/feritcoin.conf -pid=/run/feritcoind/feritcoind.pid
+# Creates /run/feritcoind owned by feritcoin
+RuntimeDirectory=feritcoind
+User=feritcoin
+Type=forking
+PIDFile=/run/feritcoind/feritcoind.pid
+Restart=on-failure
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

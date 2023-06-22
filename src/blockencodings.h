@@ -1,9 +1,9 @@
-// Copyright (c) 2016-2017 The Bitcoin Core developers
+// Copyright (c) 2016-2017 The Feritcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_BLOCK_ENCODINGS_H
-#define BITCOIN_BLOCK_ENCODINGS_H
+#ifndef FERITCOIN_BLOCK_ENCODINGS_H
+#define FERITCOIN_BLOCK_ENCODINGS_H
 
 #include <primitives/block.h>
 

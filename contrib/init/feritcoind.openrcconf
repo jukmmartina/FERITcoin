@@ -1,0 +1,33 @@
+# /etc/conf.d/feritcoind: config file for /etc/init.d/feritcoind
+
+# Config file location
+#FERITCOIND_CONFIGFILE="/etc/feritcoin/feritcoin.conf"
+
+# What directory to write pidfile to?  (created and owned by $FERITCOIND_USER)
+#FERITCOIND_PIDDIR="/var/run/feritcoind"
+
+# What filename to give the pidfile
+#FERITCOIND_PIDFILE="${FERITCOIND_PIDDIR}/feritcoind.pid"
+
+# Where to write feritcoind data (be mindful that the blockchain is large)
+#FERITCOIND_DATADIR="/var/lib/feritcoind"
+
+# User and group to own feritcoind process
+#FERITCOIND_USER="feritcoin"
+#FERITCOIND_GROUP="feritcoin"
+
+# Path to feritcoind executable
+#FERITCOIND_BIN="/usr/bin/feritcoind"
+
+# Nice value to run feritcoind under
+#FERITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+#FERITCOIND_OPTS=""
+
+# The timeout in seconds OpenRC will wait for feritcoind to terminate
+# after a SIGTERM has been raised.
+# Note that this will be mapped as argument to start-stop-daemon's
+# '--retry' option, which means you can specify a retry schedule
+# here. For more information see man 8 start-stop-daemon.
+FERITCOIND_SIGTERM_TIMEOUT=60

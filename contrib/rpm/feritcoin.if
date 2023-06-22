@@ -1,0 +1,157 @@
+
+## <summary>policy for feritcoin</summary>
+
+
+########################################
+## <summary>
+##	Transition to feritcoin.
+## </summary>
+## <param name="domain">
+## <summary>
+##	Domain allowed to transition.
+## </summary>
+## </param>
+#
+interface(`feritcoin_domtrans',`
+	gen_require(`
+		type feritcoin_t, feritcoin_exec_t;
+	')
+
+	corecmd_search_bin($1)
+	domtrans_pattern($1, feritcoin_exec_t, feritcoin_t)
+')
+
+
+########################################
+## <summary>
+##	Execute feritcoin server in the feritcoin domain.
+## </summary>
+## <param name="domain">
+##	<summary>
+##	Domain allowed access.
+##	</summary>
+## </param>
+#
+interface(`feritcoin_initrc_domtrans',`
+	gen_require(`
+		type feritcoin_initrc_exec_t;
+	')
+
+	init_labeled_script_domtrans($1, feritcoin_initrc_exec_t)
+')
+
+
+########################################
+## <summary>
+##	Search feritcoin lib directories.
+## </summary>
+## <param name="domain">
+##	<summary>
+##	Domain allowed access.
+##	</summary>
+## </param>
+#
+interface(`feritcoin_search_lib',`
+	gen_require(`
+		type feritcoin_var_lib_t;
+	')
+
+	allow $1 feritcoin_var_lib_t:dir search_dir_perms;
+	files_search_var_lib($1)
+')
+
+########################################
+## <summary>
+##	Read feritcoin lib files.
+## </summary>
+## <param name="domain">
+##	<summary>
+##	Domain allowed access.
+##	</summary>
+## </param>
+#
+interface(`feritcoin_read_lib_files',`
+	gen_require(`
+		type feritcoin_var_lib_t;
+	')
+
+	files_search_var_lib($1)
+	read_files_pattern($1, feritcoin_var_lib_t, feritcoin_var_lib_t)
+')
+
+########################################
+## <summary>
+##	Manage feritcoin lib files.
+## </summary>
+## <param name="domain">
+##	<summary>
+##	Domain allowed access.
+##	</summary>
+## </param>
+#
+interface(`feritcoin_manage_lib_files',`
+	gen_require(`
+		type feritcoin_var_lib_t;
+	')
+
+	files_search_var_lib($1)
+	manage_files_pattern($1, feritcoin_var_lib_t, feritcoin_var_lib_t)
+')
+
+########################################
+## <summary>
+##	Manage feritcoin lib directories.
+## </summary>
+## <param name="domain">
+##	<summary>
+##	Domain allowed access.
+##	</summary>
+## </param>
+#
+interface(`feritcoin_manage_lib_dirs',`
+	gen_require(`
+		type feritcoin_var_lib_t;
+	')
+
+	files_search_var_lib($1)
+	manage_dirs_pattern($1, feritcoin_var_lib_t, feritcoin_var_lib_t)
+')
+
+
+########################################
+## <summary>
+##	All of the rules required to administrate
+##	a feritcoin environment
+## </summary>
+## <param name="domain">
+##	<summary>
+##	Domain allowed access.
+##	</summary>
+## </param>
+## <param name="role">
+##	<summary>
+##	Role allowed access.
+##	</summary>
+## </param>
+## <rolecap/>
+#
+interface(`feritcoin_admin',`
+	gen_require(`
+		type feritcoin_t;
+		type feritcoin_initrc_exec_t;
+		type feritcoin_var_lib_t;
+	')
+
+	allow $1 feritcoin_t:process { ptrace signal_perms };
+	ps_process_pattern($1, feritcoin_t)
+
+	feritcoin_initrc_domtrans($1)
+	domain_system_change_exemption($1)
+	role_transition $2 feritcoin_initrc_exec_t system_r;
+	allow $2 system_r;
+
+	files_search_var_lib($1)
+	admin_pattern($1, feritcoin_var_lib_t)
+
+')
+

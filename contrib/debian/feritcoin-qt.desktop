@@ -1,0 +1,14 @@
+[Desktop Entry]
+Version=1.0
+Name=Feritcoin Core
+Comment=Connect to the Feritcoin P2P Network
+Comment[de]=Verbinde mit dem Feritcoin peer-to-peer Netzwerk
+Comment[fr]=Feritcoin, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Feritcoin, eşten eşe kriptografik sanal para birimi
+Exec=feritcoin-qt %u
+Terminal=false
+Type=Application
+Icon=feritcoin128
+MimeType=x-scheme-handler/feritcoin;
+Categories=Office;Finance;
+StartupWMClass=Feritcoin-qt

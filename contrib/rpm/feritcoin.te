@@ -1,0 +1,81 @@
+policy_module(feritcoin, 1.100.1)
+
+########################################
+#
+# Declarations
+#
+
+type feritcoin_t;
+type feritcoin_exec_t;
+init_daemon_domain(feritcoin_t, feritcoin_exec_t)
+
+permissive feritcoin_t;
+
+type feritcoin_initrc_exec_t;
+init_script_file(feritcoin_initrc_exec_t)
+
+type feritcoin_conf_t;
+files_type(feritcoin_conf_t)
+
+type feritcoin_var_lib_t;
+files_type(feritcoin_var_lib_t)
+
+type feritcoin_var_run_t;
+files_type(feritcoin_var_run_t)
+
+type feritcoin_port_t;
+corenet_port(feritcoin_port_t)
+
+########################################
+#
+# feritcoin local policy
+#
+allow feritcoin_t self:process { fork };
+
+allow feritcoin_t self:fifo_file rw_fifo_file_perms;
+allow feritcoin_t self:unix_stream_socket create_stream_socket_perms;
+
+manage_dirs_pattern(feritcoin_t, feritcoin_conf_t, feritcoin_conf_t)
+manage_files_pattern(feritcoin_t, feritcoin_conf_t, feritcoin_conf_t)
+
+manage_dirs_pattern(feritcoin_t, feritcoin_var_lib_t, feritcoin_var_lib_t)
+manage_files_pattern(feritcoin_t, feritcoin_var_lib_t, feritcoin_var_lib_t)
+files_var_lib_filetrans(feritcoin_t, feritcoin_var_lib_t, { dir file })
+
+manage_dirs_pattern(feritcoin_t, feritcoin_var_run_t, feritcoin_var_run_t)
+manage_files_pattern(feritcoin_t, feritcoin_var_run_t, feritcoin_var_run_t)
+
+sysnet_dns_name_resolve(feritcoin_t)
+corenet_all_recvfrom_unlabeled(feritcoin_t)
+
+allow feritcoin_t self:tcp_socket create_stream_socket_perms;
+corenet_tcp_sendrecv_generic_if(feritcoin_t)
+corenet_tcp_sendrecv_generic_node(feritcoin_t)
+corenet_tcp_sendrecv_all_ports(feritcoin_t)
+corenet_tcp_bind_generic_node(feritcoin_t)
+
+gen_require(`
+    type feritcoin_port_t;
+')
+allow feritcoin_t feritcoin_port_t:tcp_socket name_bind;
+
+gen_require(`
+    type feritcoin_port_t;
+')
+allow feritcoin_t feritcoin_port_t:tcp_socket name_connect;
+
+domain_use_interactive_fds(feritcoin_t)
+
+files_read_etc_files(feritcoin_t)
+
+miscfiles_read_localization(feritcoin_t)
+
+sysnet_dns_name_resolve(feritcoin_t)
+
+allow feritcoin_t feritcoin_exec_t:file execute_no_trans;
+allow feritcoin_t self:process setsched;
+corecmd_exec_ls(feritcoin_t)
+corenet_tcp_connect_http_port(feritcoin_t)
+dev_read_urand(feritcoin_t)
+fs_getattr_xattr_fs(feritcoin_t)
+kernel_read_system_state(feritcoin_t)

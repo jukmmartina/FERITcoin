@@ -1,0 +1,8 @@
+/usr/bin/feritcoin-cli		--	gen_context(system_u:object_r:feritcoin_exec_t,s0)
+/usr/sbin/feritcoind		--	gen_context(system_u:object_r:feritcoin_exec_t,s0)
+/usr/lib(64)?/feritcoin/feritcoind		--	gen_context(system_u:object_r:feritcoin_exec_t,s0)
+
+/etc/feritcoin(/.*)?		gen_context(system_u:object_r:feritcoin_conf_t,s0)
+/var/lib/feritcoin(/.*)?		gen_context(system_u:object_r:feritcoin_var_lib_t,s0)
+
+(/var)?/run/feritcoind(/.*)?   gen_context(system_u:object_r:feritcoin_var_run_t,s0)
