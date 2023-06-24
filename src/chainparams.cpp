@@ -121,7 +121,7 @@ public:
 
         genesis = CreateGenesisBlock(1687613705, 2832037265, 0x1d00ffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x00000000bebb58c846444f34a92568b44364ef0a6a221589aaa8d5eaca0ae7c1"));
+        assert(consensus.hashGenesisBlock == uint256S("0x994cb867d95f6c53fc42498ab8dc519bb662b510de1954923eb429b1de6954cb"));
         assert(genesis.hashMerkleRoot == uint256S("0xf369bd39929aed314d5635ce6a65419457e59534a74ee3f5e8fb28505d455a38"));
 
         // Note that of those which support the service bits prefix, most only support a subset of
@@ -194,7 +194,7 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 1493596800; // May 1st 2017
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x00000000000000000000000000000000000000000000002830dab7f76dbb7d63");
+        consensus.nMinimumChainWork = uint256S("0x00");
 
         // By default assume that the signatures in ancestors of this block are valid.
         consensus.defaultAssumeValid = uint256S("0x0000000002e9e7b00e1f6dc5123a04aad68dd0f0968d8c7aa45f6640795c37b1"); //1135275
