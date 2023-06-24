@@ -14,6 +14,8 @@
 
 #include <chainparamsseeds.h>
 
+#include <arith_uint256.h>
+
 static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesisOutputScript, uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
     CMutableTransaction txNew;
@@ -80,7 +82,7 @@ public:
         consensus.BIP34Hash = uint256S("0x000000000000024b89b42a942fe0d9fea3bb44ab7bd1b19115dd6a759c0808b8");
         consensus.BIP65Height = 0; 
         consensus.BIP66Height = 0; 
-        consensus.powLimit = uint256S("995f0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
+        consensus.powLimit = uint256S("0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.nPowTargetTimespan = 3.5 * 24 * 60 * 60; // 3.5 dana
         consensus.nPowTargetSpacing = 2.5 * 60;// 2.5min
         consensus.fPowAllowMinDifficultyBlocks = false;
@@ -119,10 +121,20 @@ public:
         nDefaultPort = 9191;
         nPruneAfterHeight = 100000;
 
-        genesis = CreateGenesisBlock(1687613705, 2832037265, 0x1d00ffff, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1687613705, 127241, 0x1e00ffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        //printf("Genesis block: %s\n Merkle root: %s\n", consensus.hashGenesisBlock.ToString().c_str(), genesis.hashMerkleRoot.ToString().c_str());
-        assert(consensus.hashGenesisBlock == uint256S("0x994cb867d95f6c53fc42498ab8dc519bb662b510de1954923eb429b1de6954cb"));
+        /*
+        for(; UintToArith256(genesis.GetHash()) > UintToArith256(consensus.powLimit); genesis.nNonce++){
+            if (genesis.nNonce % 1000 == 0){
+                printf("Nonce: %d\n", genesis.nNonce);
+                printf("Hash: %s\n", genesis.GetHash().ToString().c_str());
+            }
+        }
+        printf("Genesis block: %s\n Merkle root: %s\n Nonce: %d\n", genesis.GetHash().ToString().c_str(),
+                                                                    genesis.hashMerkleRoot.ToString().c_str(), 
+                                                                    genesis.nNonce);
+        */
+        assert(consensus.hashGenesisBlock == uint256S("0x000054cef8151e510afe2f8c7d5b57a6565767d6e8d1c1cb8da6c988a9474e14"));
         assert(genesis.hashMerkleRoot == uint256S("0xf369bd39929aed314d5635ce6a65419457e59534a74ee3f5e8fb28505d455a38"));
         
         // Note that of those which support the service bits prefix, most only support a subset of
@@ -173,7 +185,7 @@ public:
         consensus.BIP34Hash = uint256S("0x0000000023b3a96d3484e5abb3755c413e7d41500f8e2a5c3f0dd01299cd8ef8");
         consensus.BIP65Height = 581885; // 00000000007f6655f22f98e72ed80d8b06dc761d5da09df0fa1dc4be4f861eb6
         consensus.BIP66Height = 330776; // 000000002104c8c45e99a8853285a3b592602a3ccde2b832481da85e9e4ba182
-        consensus.powLimit = uint256S("995f0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
+        consensus.powLimit = uint256S("0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.nPowTargetTimespan = 14 * 24 * 60 * 60; 
         consensus.nPowTargetSpacing = 10 * 60;              
         consensus.fPowAllowMinDifficultyBlocks = true;
@@ -265,7 +277,7 @@ public:
         consensus.BIP34Hash = uint256();
         consensus.BIP65Height = 1351; // BIP65 activated on regtest (Used in rpc activation tests)
         consensus.BIP66Height = 1251; // BIP66 activated on regtest (Used in rpc activation tests)
-        consensus.powLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
+        consensus.powLimit = uint256S("00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.nPowTargetTimespan = 14 * 24 * 60 * 60; // two weeks
         consensus.nPowTargetSpacing = 10 * 60;
         consensus.fPowAllowMinDifficultyBlocks = true;
