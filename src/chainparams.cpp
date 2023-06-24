@@ -48,7 +48,7 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
  */
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
-    const char* pszTimestamp = "The Times 03/Jan/2009 Chancellor on brink of second bailout for banks";
+    const char* pszTimestamp = "Vecernji list 22/June/2023 Tvrtka OceanGate objavila: Vjerujemo da su svi putnici poginuli";
     const CScript genesisOutputScript = CScript() << ParseHex("04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5f") << OP_CHECKSIG;
     return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
 }
@@ -81,8 +81,8 @@ public:
         consensus.BIP65Height = 0; 
         consensus.BIP66Height = 0; 
         consensus.powLimit = uint256S("00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        consensus.nPowTargetTimespan = 14 * 24 * 60 * 60; // two weeks
-        consensus.nPowTargetSpacing = 10 * 60;// 000000000000000004c2b624ed5d7756c508d90fd0da2c7c679febfa6c4735f0
+        consensus.nPowTargetTimespan = 3.5 * 24 * 60 * 60; // 3.5 dana
+        consensus.nPowTargetSpacing = 2.5 * 60;// 2.5min
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
         consensus.nRuleChangeActivationThreshold = 1916; // 95% of 2016
@@ -119,10 +119,10 @@ public:
         nDefaultPort = 9191;
         nPruneAfterHeight = 100000;
 
-        genesis = CreateGenesisBlock(1529098663, 2832037265, 0x1d00ffff, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1687613705, 2832037265, 0x1d00ffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        //assert(consensus.hashGenesisBlock == uint256S("0x000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f"));
-        //assert(genesis.hashMerkleRoot == uint256S("0xf369bd39929aed314d5635ce6a65419457e59534a74ee3f5e8fb28505d455a38"));
+        assert(consensus.hashGenesisBlock == uint256S("0x00000000bebb58c846444f34a92568b44364ef0a6a221589aaa8d5eaca0ae7c1"));
+        assert(genesis.hashMerkleRoot == uint256S("0xf369bd39929aed314d5635ce6a65419457e59534a74ee3f5e8fb28505d455a38"));
 
         // Note that of those which support the service bits prefix, most only support a subset of
         // possible options.
@@ -173,8 +173,8 @@ public:
         consensus.BIP65Height = 581885; // 00000000007f6655f22f98e72ed80d8b06dc761d5da09df0fa1dc4be4f861eb6
         consensus.BIP66Height = 330776; // 000000002104c8c45e99a8853285a3b592602a3ccde2b832481da85e9e4ba182
         consensus.powLimit = uint256S("00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        consensus.nPowTargetTimespan = 3.5 * 24 * 60 * 60; // 3.5 days
-        consensus.nPowTargetSpacing = 2.5 * 60;              // 2.5 min
+        consensus.nPowTargetTimespan = 14 * 24 * 60 * 60; 
+        consensus.nPowTargetSpacing = 10 * 60;              
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = false;
         consensus.nRuleChangeActivationThreshold = 1512; // 75% for testchains
@@ -206,7 +206,7 @@ public:
         nDefaultPort = 19191;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1529098663, 0, 0x1d00ffff, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1231006505, 2083236893, 0x1d00ffff, 1, 50 * COIN);
 
         consensus.hashGenesisBlock = genesis.GetHash();
 
