@@ -80,7 +80,7 @@ public:
         consensus.BIP34Hash = uint256S("0x000000000000024b89b42a942fe0d9fea3bb44ab7bd1b19115dd6a759c0808b8");
         consensus.BIP65Height = 0; 
         consensus.BIP66Height = 0; 
-        consensus.powLimit = uint256S("00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
+        consensus.powLimit = uint256S("995f0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.nPowTargetTimespan = 3.5 * 24 * 60 * 60; // 3.5 dana
         consensus.nPowTargetSpacing = 2.5 * 60;// 2.5min
         consensus.fPowAllowMinDifficultyBlocks = false;
@@ -121,9 +121,10 @@ public:
 
         genesis = CreateGenesisBlock(1687613705, 2832037265, 0x1d00ffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
+        //printf("Genesis block: %s\n Merkle root: %s\n", consensus.hashGenesisBlock.ToString().c_str(), genesis.hashMerkleRoot.ToString().c_str());
         assert(consensus.hashGenesisBlock == uint256S("0x994cb867d95f6c53fc42498ab8dc519bb662b510de1954923eb429b1de6954cb"));
         assert(genesis.hashMerkleRoot == uint256S("0xf369bd39929aed314d5635ce6a65419457e59534a74ee3f5e8fb28505d455a38"));
-
+        
         // Note that of those which support the service bits prefix, most only support a subset of
         // possible options.
         // This is fine at runtime as we'll fall back to using them as a oneshot if they dont support the
@@ -172,7 +173,7 @@ public:
         consensus.BIP34Hash = uint256S("0x0000000023b3a96d3484e5abb3755c413e7d41500f8e2a5c3f0dd01299cd8ef8");
         consensus.BIP65Height = 581885; // 00000000007f6655f22f98e72ed80d8b06dc761d5da09df0fa1dc4be4f861eb6
         consensus.BIP66Height = 330776; // 000000002104c8c45e99a8853285a3b592602a3ccde2b832481da85e9e4ba182
-        consensus.powLimit = uint256S("00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
+        consensus.powLimit = uint256S("995f0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.nPowTargetTimespan = 14 * 24 * 60 * 60; 
         consensus.nPowTargetSpacing = 10 * 60;              
         consensus.fPowAllowMinDifficultyBlocks = true;
@@ -206,13 +207,12 @@ public:
         nDefaultPort = 19191;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1231006505, 2083236893, 0x1d00ffff, 1, 50 * COIN);
-
+        
+        genesis = CreateGenesisBlock(1687613705, 2832037265, 0x1d00ffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-
-        assert(consensus.hashGenesisBlock == uint256S("0x000000000933ea01ad0ee984209779baaec3ced90fa3f408719526f8d77f4943"));
-        assert(genesis.hashMerkleRoot == uint256S("0x4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b"));
-
+        assert(consensus.hashGenesisBlock == uint256S("0x994cb867d95f6c53fc42498ab8dc519bb662b510de1954923eb429b1de6954cb"));
+        assert(genesis.hashMerkleRoot == uint256S("0xf369bd39929aed314d5635ce6a65419457e59534a74ee3f5e8fb28505d455a38"));
+    
         vFixedSeeds.clear();
         vSeeds.clear();
         // nodes with support for servicebits filtering should be at the top
