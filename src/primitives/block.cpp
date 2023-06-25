@@ -9,9 +9,8 @@
 #include <tinyformat.h>
 #include <utilstrencodings.h>
 #include <crypto/common.h>
-extern "C"{
-    #include <crypto/neoscrypt.h>
-}
+#include <crypto/neoscrypt.h>
+
 
 uint256 CBlockHeader::GetHash() const
 {

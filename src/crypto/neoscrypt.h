@@ -1,6 +1,7 @@
-#if (__cplusplus)
-extern "C" {
-#endif
+#ifndef _CRYPTO_NEOSCRYPT_H_
+#define _CRYPTO_NEOSCRYPT_H_
+
+//extern "C" {
 
 void neoscrypt(const unsigned char *password, unsigned char *output,
   unsigned int profile);
@@ -32,9 +33,7 @@ void neoscrypt_fastkdf_4way(const unsigned char *password,
 
 unsigned int cpu_vec_exts(void);
 
-#if (__cplusplus)
-}
-#else
+//}
 
 typedef unsigned long long ullong;
 typedef signed long long llong;
