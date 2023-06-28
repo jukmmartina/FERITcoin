@@ -116,6 +116,7 @@ FERITCOIN_CORE_H = \
   netaddress.h \
   netbase.h \
   netmessagemaker.h \
+  neoscrypt.h \
   noui.h \
   policy/feerate.h \
   policy/fees.h \
@@ -267,8 +268,6 @@ crypto_libferitcoin_crypto_a_SOURCES = \
   crypto/hmac_sha256.h \
   crypto/hmac_sha512.cpp \
   crypto/hmac_sha512.h \
-  crypto/neoscrypt.cpp \
-  crypto/neoscrypt.h \
   crypto/ripemd160.cpp \
   crypto/ripemd160.h \
   crypto/sha1.cpp \
@@ -300,6 +299,7 @@ libferitcoin_consensus_a_SOURCES = \
   primitives/block.h \
   primitives/transaction.cpp \
   primitives/transaction.h \
+  neoscrypt.cpp \
   pubkey.cpp \
   pubkey.h \
   script/feritcoinconsensus.cpp \
